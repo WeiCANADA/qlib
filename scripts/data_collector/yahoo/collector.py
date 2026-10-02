@@ -22,7 +22,6 @@ from dateutil.tz import tzlocal
 
 import qlib
 from qlib.data import D
-from qlib.tests.data import GetData
 from qlib.utils import code_to_fname, fname_to_code, exists_qlib_data
 from qlib.constant import REG_CN as REGION_CN
 
@@ -38,6 +37,7 @@ from data_collector.utils import (
     get_us_stock_symbols,
     get_in_stock_symbols,
     get_br_stock_symbols,
+    get_ca_stock_symbols,
     generate_minutes_calendar_from_daily,
     calc_adjusted_price,
 )
@@ -50,7 +50,7 @@ class YahooCollector(BaseCollector):
 
     def __init__(
         self,
-        save_dir: [str, Path],
+        save_dir: str | Path,
         start=None,
         end=None,
         interval="1d",
@@ -59,6 +59,7 @@ class YahooCollector(BaseCollector):
         delay=0,
         check_data_length: int = None,
         limit_nums: int = None,
+        instruments=None,
     ):
         """
 
@@ -82,6 +83,8 @@ class YahooCollector(BaseCollector):
             check data length, by default None
         limit_nums: int
             using for debug, by default None
+        instruments: str or Iterable
+            specific symbols to collect, e.g. "AC.TO,MSFT"; default None means all symbols
         """
         super(YahooCollector, self).__init__(
             save_dir=save_dir,
@@ -93,6 +96,7 @@ class YahooCollector(BaseCollector):
             delay=delay,
             check_data_length=check_data_length,
             limit_nums=limit_nums,
+            instruments=instruments,
         )
 
         self.init_datetime()
@@ -109,7 +113,7 @@ class YahooCollector(BaseCollector):
         self.end_datetime = self.convert_datetime(self.end_datetime, self._timezone)
 
     @staticmethod
-    def convert_datetime(dt: [pd.Timestamp, datetime.date, str], timezone):
+    def convert_datetime(dt: pd.Timestamp | datetime.date | str, timezone):
         try:
             dt = pd.Timestamp(dt, tz=timezone).timestamp()
             dt = pd.Timestamp(dt, tz=tzlocal(), unit="s")
@@ -364,6 +368,36 @@ class YahooCollectorBR1min(YahooCollectorBR):
     retry = 2
 
 
+class YahooCollectorCA(YahooCollector, ABC):
+    def get_instrument_list(self):
+        logger.info("get Canada stock symbols......")
+        symbols = get_ca_stock_symbols()
+        logger.info(f"get {len(symbols)} symbols.")
+        return symbols
+
+    def download_index_data(self):
+        pass
+
+    def normalize_symbol(self, symbol):
+        # Remove ^ from index symbols and replace . with _
+        if symbol.startswith("^"):
+            return symbol[1:].replace(".", "_").upper()
+        else:
+            return symbol.replace(".", "_").upper()
+
+    @property
+    def _timezone(self):
+        return "America/Toronto"
+
+
+class YahooCollectorCA1d(YahooCollectorCA):
+    pass
+
+
+class YahooCollectorCA1min(YahooCollectorCA):
+    pass
+
+
 class YahooNormalize(BaseNormalize):
     COLUMNS = ["open", "close", "high", "low", "volume"]
     DAILY_FORMAT = "%Y-%m-%d"
@@ -509,7 +543,7 @@ class YahooNormalize1d(YahooNormalize, ABC):
 
 class YahooNormalize1dExtend(YahooNormalize1d):
     def __init__(
-        self, old_qlib_data_dir: [str, Path], date_field_name: str = "date", symbol_field_name: str = "symbol", **kwargs
+        self, old_qlib_data_dir: str | Path, date_field_name: str = "date", symbol_field_name: str = "symbol", **kwargs
     ):
         """
 
@@ -526,7 +560,7 @@ class YahooNormalize1dExtend(YahooNormalize1d):
         self.column_list = ["open", "high", "low", "close", "volume", "factor", "change"]
         self.old_qlib_data = self._get_old_data(old_qlib_data_dir)
 
-    def _get_old_data(self, qlib_data_dir: [str, Path]):
+    def _get_old_data(self, qlib_data_dir: str | Path):
         qlib_data_dir = str(Path(qlib_data_dir).expanduser().resolve())
         qlib.init(provider_uri=qlib_data_dir, expression_cache=None, dataset_cache=None)
         df = D.features(D.instruments("all"), ["$" + col for col in self.column_list])
@@ -564,7 +598,7 @@ class YahooNormalize1min(YahooNormalize, ABC):
     CALC_PAUSED_NUM = True
 
     def __init__(
-        self, qlib_data_1d_dir: [str, Path], date_field_name: str = "date", symbol_field_name: str = "symbol", **kwargs
+        self, qlib_data_1d_dir: str | Path, date_field_name: str = "date", symbol_field_name: str = "symbol", **kwargs
     ):
         """
 
@@ -720,6 +754,20 @@ class YahooNormalizeBR1min(YahooNormalizeBR, YahooNormalize1min):
         return fname_to_code(symbol)
 
 
+class YahooNormalizeCA:
+    def _get_calendar_list(self) -> Iterable[pd.Timestamp]:
+        # Use ^GSPTSE (S&P/TSX Composite Index) as the Canada trading calendar
+        return get_calendar_list("CA_ALL")
+
+
+class YahooNormalizeCA1d(YahooNormalizeCA, YahooNormalize1d):
+    pass
+
+
+class YahooNormalizeCA1dExtend(YahooNormalizeCA, YahooNormalize1dExtend):
+    pass
+
+
 class Run(BaseRun):
     def __init__(self, source_dir=None, normalize_dir=None, max_workers=1, interval="1d", region=REGION_CN):
         """
@@ -749,7 +797,7 @@ class Run(BaseRun):
         return f"YahooNormalize{self.region.upper()}{self.interval}"
 
     @property
-    def default_base_dir(self) -> [Path, str]:
+    def default_base_dir(self) -> Path | str:
         return CUR_DIR
 
     def download_data(
@@ -760,6 +808,7 @@ class Run(BaseRun):
         end=None,
         check_data_length=None,
         limit_nums=None,
+        instruments=None,
     ):
         """download data from Internet
 
@@ -777,6 +826,8 @@ class Run(BaseRun):
             check data length, if not None and greater than 0, each symbol will be considered complete if its data length is greater than or equal to this value, otherwise it will be fetched again, the maximum number of fetches being (max_collector_count). By default None.
         limit_nums: int
             using for debug, by default None
+        instruments: str
+            specific symbols to collect, e.g. "AC.TO,MSFT"; default None means all symbols
 
         Notes
         -----
@@ -795,7 +846,15 @@ class Run(BaseRun):
         if self.interval == "1d" and pd.Timestamp(end) > pd.Timestamp(datetime.datetime.now().strftime("%Y-%m-%d")):
             raise ValueError(f"end_date: {end} is greater than the current date.")
 
-        super(Run, self).download_data(max_collector_count, delay, start, end, check_data_length, limit_nums)
+        super(Run, self).download_data(
+            max_collector_count,
+            delay,
+            start,
+            end,
+            check_data_length,
+            limit_nums,
+            instruments=instruments,
+        )
 
     def normalize_data(
         self,
@@ -968,8 +1027,10 @@ class Run(BaseRun):
         # download qlib 1d data
         qlib_data_1d_dir = str(Path(qlib_data_1d_dir).expanduser().resolve())
         if not exists_qlib_data(qlib_data_1d_dir):
-            GetData().qlib_data(
-                target_dir=qlib_data_1d_dir, interval=self.interval, region=self.region, exists_skip=exists_skip
+            raise FileNotFoundError(
+                "Missing local qlib 1d data directory required by update_data_to_bin: "
+                f"{qlib_data_1d_dir}. "
+                "Provision qlib data first, then rerun update_data_to_bin."
             )
 
         # start/end date
@@ -990,6 +1051,13 @@ class Run(BaseRun):
         )
         # normalize data
         self.normalize_data_1d_extend(qlib_data_1d_dir)
+
+        normalize_files = list(Path(self.normalize_dir).glob("*.csv"))
+        if len(normalize_files) == 0:
+            logger.info(
+                f"No incremental normalized files found in {self.normalize_dir}; skip dump update for region={self.region}."
+            )
+            return
 
         # dump bin
         _dump = DumpDataUpdate(

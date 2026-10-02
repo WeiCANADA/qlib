@@ -1,0 +1,381 @@
+symbol,company,sector,exchange,source
+ABRA.TO,AbraSilver Resource Corp.,,TSX,TMX Company Directory
+AC.TO,Air Canada Voting and Variable Voting Shares,,TSX,TSX Composite
+ACO-X.TO,ATCO Ltd.,,TSX,TMX Company Directory
+ACQ.TO,AutoCanada Inc.,,TSX,TMX Company Directory
+ADEN.TO,ADENTRA Inc.,,TSX,TMX Company Directory
+ADN.TO,Acadian Timber Corp.,,TSX,TMX Company Directory
+ADW-A.TO,Andrew Peller Limited/Andrew Peller Limitee,,TSX,TMX Company Directory
+AEM.TO,Agnico Eagle Mines Limited,,TSX,TSX Composite
+AG.TO,First Majestic Silver Corp.,,TSX,TSX Composite
+AGI.TO,Alamos Gold Inc.,,TSX,TSX Composite
+AIF.TO,Altus Group Limited,,TSX,TSX Composite
+AII.TO,Almonty Industries Inc.,,TSX,TMX Company Directory
+ALA.TO,AltaGas Ltd.,,TSX,TSX Composite
+ALC.TO,Algoma Central Corporation,,TSX,TMX Company Directory
+ALS.TO,Altius Minerals Corporation,,TSX,TSX Composite
+APM.TO,Andean Precious Metals Corp.,,TSX,TMX Company Directory
+ARE.TO,Aecon Group Inc.,,TSX,TSX Composite
+ARG.TO,Amerigo Resources Ltd.,,TSX,TMX Company Directory
+ARX.TO,ARC Resources Ltd.,,TSX,TSX Composite
+ASM.TO,Avino Silver & Gold Mines Ltd.,,TSX,TSX Composite
+ATD.TO,Alimentation Couche-Tard Inc.,,TSX,TSX Composite
+ATRL.TO,AtkinsRéalis Group Inc.,,TSX,TSX Composite
+ATZ.TO,Aritzia Inc. Subordinate Voting Shares,,TSX,TSX Composite
+AYA.TO,Aya Gold & Silver Inc.,,TSX,TSX Composite
+BBD-A.TO,Bombardier Inc.,,TSX,TMX Company Directory
+BCHT.TO,Birchtech Corp.,,TSX,TMX Company Directory
+BDGI.TO,Badger Infrastructure Solutions Ltd.,,TSX,TSX Composite
+BDT.TO,Bird Construction Inc.,,TSX,TSX Composite
+BIR.TO,Birchcliff Energy Ltd.,,TSX,TSX Composite
+BLX.TO,Boralex Inc. Class A Shares,,TSX,TSX Composite
+BMO.TO,Bank of Montreal,,TSX,TSX Composite
+BN.TO,Brookfield Corporation Class A Limited Voting Shares,,TSX,TSX Composite
+BNS.TO,Bank of Nova Scotia (The),,TSX,TSX Composite
+BRE.TO,Bridgemarq Real Estate Services Inc.,,TSX,TMX Company Directory
+BSX.TO,Belo Sun Mining Corp.,,TSX,TMX Company Directory
+BYD.TO,Boyd Group Services Inc.,,TSX,TSX Composite
+CAE.TO,CAE Inc.,,TSX,TSX Composite
+CCO.TO,Cameco Corporation,,TSX,TSX Composite
+CEU.TO,CES Energy Solutions Corp.,,TSX,TSX Composite
+CGG.TO,China Gold International Resources Corp. Ltd.,,TSX,TMX Company Directory
+CGY.TO,Calian Group Ltd.,,TSX,TMX Company Directory
+CIA.TO,Champion Iron Limited,,TSX,TMX Company Directory
+CIGI.TO,Colliers International Group Inc. Subordinate Voting Shares,,TSX,TSX Composite
+CJT.TO,Cargojet Inc. Common and Variable Voting Shares,,TSX,TSX Composite
+CKI.TO,Clarke Inc.,,TSX,TMX Company Directory
+CLS.TO,Celestica Inc.,,TSX,TSX Composite
+CM.TO,Canadian Imperial Bank Of Commerce,,TSX,TSX Composite
+CMG.TO,Computer Modelling Group Ltd.,,TSX,TMX Company Directory
+CNL.TO,Collective Mining Ltd.,,TSX,TMX Company Directory
+CNQ.TO,Canadian Natural Resources Limited,,TSX,TSX Composite
+CNR.TO,Canadian National Railway Company,,TSX,TSX Composite
+CP.TO,Canadian Pacific Kansas City Limited,,TSX,TSX Composite
+CPH.TO,Cipher Pharmaceuticals Inc.,,TSX,TMX Company Directory
+CPX.TO,Capital Power Corporation,,TSX,TSX Composite
+CS.TO,Capstone Copper Corp.,,TSX,TSX Composite
+CSU.TO,Constellation Software Inc.,,TSX,TSX Composite
+CU.TO,Canadian Utilities Limited Class A Non-Voting Shares,,TSX,TSX Composite
+CVG.TO,Clairvest Group Inc.,,TSX,TMX Company Directory
+CYB.TO,Cymbria Corporation,,TSX,TMX Company Directory
+DBM.TO,Doman Building Materials Group Ltd.,,TSX,TMX Company Directory
+DBO.TO,D-Box Technologies Inc.,,TSX,TMX Company Directory
+DNG.TO,Dynacor Group Inc.,,TSX,TMX Company Directory
+DOL.TO,Dollarama Inc.,,TSX,TSX Composite
+DPM.TO,DPM Metals Inc.,,TSX,TSX Composite
+DR.TO,Medical Facilities Corporation,,TSX,TMX Company Directory
+DRX.TO,ADF Group Inc.,,TSX,TMX Company Directory
+DSG.TO,Descartes Systems Group Inc. (The),,TSX,TSX Composite
+DSV.TO,Discovery Mining Ltd.,,TSX,TSX Composite
+EDR.TO,Endeavour Silver Corp.,,TSX,TSX Composite
+EDV.TO,Endeavour Mining plc,,TSX,TMX Company Directory
+EFN.TO,Element Fleet Management Corp.,,TSX,TSX Composite
+EFR.TO,Energy Fuels Inc.,,TSX,TMX Company Directory
+EFX.TO,Enerflex Ltd.,,TSX,TMX Company Directory
+EIF.TO,Exchange Income Corporation,,TSX,TSX Composite
+ELD.TO,Eldorado Gold Corporation,,TSX,TMX Company Directory
+ELE.TO,Elemental Royalty Corporation,,TSX,TMX Company Directory
+ELF.TO,E-L Financial Corporation Limited,,TSX,TMX Company Directory
+ELVA.TO,Electrovaya Inc.,,TSX,TMX Company Directory
+EMA.TO,Emera Incorporated,,TSX,TSX Composite
+EMP-A.TO,Empire Company Limited,,TSX,TMX Company Directory
+ENB.TO,Enbridge Inc.,,TSX,TSX Composite
+ENGH.TO,Enghouse Systems Limited,,TSX,TMX Company Directory
+EPRX.TO,Eupraxia Pharmaceuticals Inc.,,TSX,TMX Company Directory
+EQB.TO,EQB Inc.,,TSX,TSX Composite
+EQX.TO,Equinox Gold Corp.,,TSX,TSX Composite
+ERD.TO,Erdene Resource Development Corporation,,TSX,TMX Company Directory
+ERO.TO,Ero Copper Corp.,,TSX,TSX Composite
+ET.TO,Evertz Technologies Limited,,TSX,TMX Company Directory
+EXE.TO,Extendicare Inc.,,TSX,TSX Composite
+FC.TO,Firm Capital Mortgage Investment Corporation,,TSX,TMX Company Directory
+FDY.TO,Faraday Copper Corp.,,TSX,TMX Company Directory
+FEC.TO,Frontera Energy Corporation,,TSX,TMX Company Directory
+FFH.TO,Fairfax Financial Holdings Limited Subordinate Voting Shares,,TSX,TSX Composite
+FFN.TO,North American Financial 15 Split Corp.,,TSX,TMX Company Directory
+FM.TO,First Quantum Minerals Ltd.,,TSX,TSX Composite
+FNV.TO,Franco-Nevada Corporation,,TSX,TSX Composite
+FRU.TO,Freehold Royalties Ltd.,,TSX,TSX Composite
+FSV.TO,FirstService Corporation,,TSX,TSX Composite
+FSZ.TO,Fiera Capital Corporation,,TSX,TMX Company Directory
+FTG.TO,Firan Technology Group Corporation,,TSX,TMX Company Directory
+FTS.TO,Fortis Inc.,,TSX,TSX Composite
+FTT.TO,Finning International Inc.,,TSX,TSX Composite
+FVI.TO,Fortuna Mining Corp.,,TSX,TSX Composite
+GBT.TO,BMTC Group Inc.,,TSX,TMX Company Directory
+GDL.TO,Goodfellow Inc.,,TSX,TMX Company Directory
+GEI.TO,Gibson Energy Inc.,,TSX,TMX Company Directory
+GFL.TO,GFL Environmental Inc.,,TSX,TMX Company Directory
+GIB-A.TO,CGI Inc.,,TSX,TMX Company Directory
+GIL.TO,Gildan Activewear Inc.,,TSX,TSX Composite
+GMIN.TO,G Mining Ventures Corp.,,TSX,TSX Composite
+GOOS.TO,Canada Goose Holdings Inc.,,TSX,TMX Company Directory
+GSY.TO,goeasy Ltd.,,TSX,TMX Company Directory
+GTE.TO,Gran Tierra Energy Inc.,,TSX,TMX Company Directory
+GTWO.TO,G2 Goldfields Inc.,,TSX,TMX Company Directory
+GUD.TO,Knight Therapeutics Inc.,,TSX,TMX Company Directory
+GWO.TO,Great-West Lifeco Inc.,,TSX,TSX Composite
+H.TO,Hydro One Limited,,TSX,TMX Company Directory
+HBM.TO,Hudbay Minerals Inc.,,TSX,TSX Composite
+HLF.TO,High Liner Foods Incorporated,,TSX,TMX Company Directory
+HMM-A.TO,Hammond Manufacturing Company Limited,,TSX,TMX Company Directory
+HMMC.TO,Hemlo Mining Corp.,,TSX,TMX Company Directory
+HPS-A.TO,Hammond Power Solutions Inc.,,TSX,TMX Company Directory
+HSLV.TO,Highlander Silver Corp.,,TSX,TMX Company Directory
+HWX.TO,Headwater Exploration Inc.,,TSX,TSX Composite
+IAG.TO,iA Financial Corporation Inc.,,TSX,TSX Composite
+IE.TO,Ivanhoe Electric Inc.,,TSX,TMX Company Directory
+IFC.TO,Intact Financial Corporation,,TSX,TSX Composite
+IFP.TO,Interfor Corporation,,TSX,TMX Company Directory
+IGB.TO,Purpose Global Bond Class,,TSX,TMX Company Directory
+IGM.TO,IGM Financial Inc.,,TSX,TSX Composite
+III.TO,Imperial Metals Corporation,,TSX,TMX Company Directory
+IMG.TO,IAMGOLD Corporation,,TSX,TMX Company Directory
+IMO.TO,Imperial Oil Limited,,TSX,TSX Composite
+IPCO.TO,International Petroleum Corporation,,TSX,TSX Composite
+IPO.TO,InPlay Oil Corp.,,TSX,TMX Company Directory
+IS.TO,Infrastructure Dividend Split Corp.,,TSX,TMX Company Directory
+ISO.TO,IsoEnergy Ltd.,,TSX,TMX Company Directory
+IVN.TO,Ivanhoe Mines Ltd.,,TSX,TMX Company Directory
+JAG.TO,Jaguar Mining Inc.,,TSX,TMX Company Directory
+JWEL.TO,Jamieson Wellness Inc.,,TSX,TMX Company Directory
+K.TO,Kinross Gold Corporation,,TSX,TMX Company Directory
+KBL.TO,K-Bro Linen Inc.,,TSX,TMX Company Directory
+KEEL.TO,Keel Infrastructure Corp.,,TSX,TMX Company Directory
+KEI.TO,Kolibri Global Energy Inc.,,TSX,TMX Company Directory
+KEL.TO,Kelt Exploration Ltd.,,TSX,TMX Company Directory
+KEY.TO,Keyera Corp.,,TSX,TSX Composite
+KITS.TO,Kits Eyecare Ltd.,,TSX,TMX Company Directory
+KNT.TO,K92 Mining Inc.,,TSX,TSX Composite
+KPT.TO,KP Tissue Inc.,,TSX,TMX Company Directory
+KSI.TO,"kneat.com, inc.",,TSX,TMX Company Directory
+KXS.TO,Kinaxis Inc.,,TSX,TSX Composite
+L.TO,Loblaw Companies Limited,,TSX,TSX Composite
+LAR.TO,Lithium Argentina AG,,TSX,TMX Company Directory
+LAS-A.TO,Lassonde Industries Inc.,,TSX,TMX Company Directory
+LB.TO,Laurentian Bank of Canada,,TSX,TMX Company Directory
+LBS.TO,Life & Banc Split Corp.,,TSX,TMX Company Directory
+LCFS.TO,Tidewater Renewables Ltd.,,TSX,TMX Company Directory
+LCS.TO,Brompton Lifeco Split Corp.,,TSX,TMX Company Directory
+LFE.TO,Canadian Life Companies Split Corp.,,TSX,TMX Company Directory
+LIF.TO,Labrador Iron Ore Royalty Corporation,,TSX,TSX Composite
+LMCU.TO,Lumina Metals Corp.,,TSX,TMX Company Directory
+LNF.TO,Leon's Furniture Limited,,TSX,TMX Company Directory
+LNR.TO,Linamar Corporation,,TSX,TSX Composite
+LSPD.TO,Lightspeed Commerce Inc.,,TSX,TMX Company Directory
+LUG.TO,Lundin Gold Inc.,,TSX,TSX Composite
+LUN.TO,Lundin Mining Corporation,,TSX,TSX Composite
+LUNR.TO,LunR Royalties Corp.,,TSX,TMX Company Directory
+MAL.TO,Magellan Aerospace Corporation,,TSX,TMX Company Directory
+MARI.TO,Marimaca Copper Corp.,,TSX,TMX Company Directory
+MATR.TO,Mattr Corp.,,TSX,TMX Company Directory
+MAU.TO,Montage Gold Corp.,,TSX,TSX Composite
+MCAN.TO,Manulife Canadian Equity Class,,TSX,TMX Company Directory
+MDA.TO,MDA Space Ltd.,,TSX,TMX Company Directory
+MDI.TO,Major Drilling Group International Inc.,,TSX,TMX Company Directory
+MDP.TO,Medexus Pharmaceuticals Inc.,,TSX,TMX Company Directory
+MEQ.TO,Mainstreet Equity Corp.,,TSX,TMX Company Directory
+MFC.TO,Manulife Financial Corporation,,TSX,TMX Company Directory
+MFI.TO,Maple Leaf Foods Inc.,,TSX,TMX Company Directory
+MG.TO,Magna International Inc.,,TSX,TSX Composite
+MIPC.TO,Middlefield Income Plus Class,,TSX,TMX Company Directory
+MKP.TO,MCAN Mortgage Corporation,,TSX,TMX Company Directory
+MNS.TO,Royal Canadian Mint - Canadian Silver Reserves,,TSX,TMX Company Directory
+MNT.TO,Royal Canadian Mint - Canadian Gold Reserves,,TSX,TMX Company Directory
+MRC.TO,Morguard Corporation,,TSX,TMX Company Directory
+MRD.TO,Melcor Developments Ltd.,,TSX,TMX Company Directory
+MRE.TO,Martinrea International Inc.,,TSX,TMX Company Directory
+MRU.TO,Metro Inc.,,TSX,TSX Composite
+MSA.TO,Mineros S.A.,,TSX,TMX Company Directory
+MSCL.TO,Satellos Bioscience Inc.,,TSX,TMX Company Directory
+MTL.TO,Mullen Group Ltd.,,TSX,TMX Company Directory
+MTY.TO,MTY Food Group Inc.,,TSX,TMX Company Directory
+MUX.TO,McEwen Inc.,,TSX,TMX Company Directory
+MX.TO,Methanex Corporation,,TSX,TMX Company Directory
+NA.TO,National Bank of Canada,,TSX,TSX Composite
+NEO.TO,Neo Performance Materials Inc.,,TSX,TMX Company Directory
+NFI.TO,NFI Group Inc.,,TSX,TSX Composite
+NG.TO,NovaGold Resources Inc.,,TSX,TMX Company Directory
+NGEX.TO,NGEx Minerals Ltd.,,TSX,TSX Composite
+NOA.TO,North American Construction Group Ltd.,,TSX,TMX Company Directory
+NPI.TO,Northland Power Inc.,,TSX,TSX Composite
+NPS.TO,Canadian Large Cap Leaders Split Corp.,,TSX,TMX Company Directory
+NTR.TO,Nutrien Ltd.,,TSX,TMX Company Directory
+NUAG.TO,New Pacific Metals Corp.,,TSX,TMX Company Directory
+NWC.TO,North West Company Inc. (The),,TSX,TSX Composite
+NXE.TO,NexGen Energy Ltd.,,TSX,TSX Composite
+OBE.TO,Obsidian Energy Ltd.,,TSX,TMX Company Directory
+OGC.TO,OceanaGold Corporation,,TSX,TMX Company Directory
+OLA.TO,Orla Mining Ltd,,TSX,TSX Composite
+OLY.TO,Olympia Financial Group Inc.,,TSX,TMX Company Directory
+ONEX.TO,ONEX Corporation Subordinate Voting Shares,,TSX,TSX Composite
+OR.TO,OR Royalties Inc.,,TSX,TMX Company Directory
+OTEX.TO,Open Text Corporation,,TSX,TSX Composite
+OVV.TO,Ovintiv Inc.,,TSX,TMX Company Directory
+PAAS.TO,Pan American Silver Corp.,,TSX,TMX Company Directory
+PBAL.TO,PIMCO Managed Balanced Portfolio,,TSX,TMX Company Directory
+PBH.TO,Premium Brands Holdings Corporation,,TSX,TSX Composite
+PBL.TO,Pollard Banknote Limited,,TSX,TMX Company Directory
+PCOR.TO,PIMCO Managed Core Bond Pool,,TSX,TMX Company Directory
+PD.TO,Precision Drilling Corporation,,TSX,TMX Company Directory
+PDN.TO,Paladin Energy Ltd.,,TSX,TMX Company Directory
+PDV.TO,Prime Dividend Corp.,,TSX,TMX Company Directory
+PET.TO,Pet Valu Holdings Ltd.,,TSX,TMX Company Directory
+PEY.TO,Peyto Exploration & Development Corp.,,TSX,TMX Company Directory
+PHX.TO,PHX Energy Services Corp.,,TSX,TMX Company Directory
+PIC-A.TO,Premium Income Corporation,,TSX,TMX Company Directory
+PIF.TO,Polaris Renewable Energy Inc.,,TSX,TMX Company Directory
+PMET.TO,PMET Resources Inc.,,TSX,TMX Company Directory
+PNP.TO,Pinetree Capital Ltd.,,TSX,TMX Company Directory
+POU.TO,Paramount Resources Ltd.,,TSX,TMX Company Directory
+POW.TO,Power Corporation of Canada Subordinate Voting Shares,,TSX,TSX Composite
+PPL.TO,Pembina Pipeline Corporation,,TSX,TSX Composite
+PPTA.TO,Perpetua Resources Corp.,,TSX,TMX Company Directory
+PRL.TO,Propel Holdings Inc.,,TSX,TMX Company Directory
+PRM.TO,Big Pharma Split Corp.,,TSX,TMX Company Directory
+PRN.TO,Profound Medical Corp.,,TSX,TMX Company Directory
+PSI.TO,Pason Systems Inc.,,TSX,TMX Company Directory
+PSK.TO,PrairieSky Royalty Ltd.,,TSX,TMX Company Directory
+PWI.TO,Power & Infrastructure Split Corp.,,TSX,TMX Company Directory
+PXT.TO,Parex Resources Inc.,,TSX,TMX Company Directory
+PZA.TO,Pizza Pizza Royalty Corp.,,TSX,TMX Company Directory
+QRC.TO,Queen's Road Capital Investment Ltd.,,TSX,TMX Company Directory
+QSR.TO,Restaurant Brands International Inc.,,TSX,TMX Company Directory
+RAY.TO,Stingray Group Inc.,,TSX,TMX Company Directory
+RBA.TO,RB Global Inc.,,TSX,TSX Composite
+RCH.TO,Richelieu Hardware Ltd.,,TSX,TSX Composite
+RCI-A.TO,Rogers Communications Inc.,,TSX,TMX Company Directory
+REAL.TO,Real Matters Inc.,,TSX,TMX Company Directory
+RFA.TO,RFA Financial Inc.,,TSX,TMX Company Directory
+RGSI.TO,Rockpoint Gas Storage Inc.,,TSX,TMX Company Directory
+RIC.TO,Richards Group Inc.,,TSX,TMX Company Directory
+RIFI.TO,Russell Investments Fixed Income Pool,,TSX,TMX Company Directory
+RIIN.TO,Russell Investments Global Infrastructure Pool,,TSX,TMX Company Directory
+RIRA.TO,Russell Investments Real Assets,,TSX,TMX Company Directory
+RS.TO,Real Estate Split Corp.,,TSX,TMX Company Directory
+RSI.TO,Rogers Sugar Inc.,,TSX,TMX Company Directory
+RUS.TO,Russel Metals Inc.,,TSX,TSX Composite
+RY.TO,Royal Bank of Canada,,TSX,TSX Composite
+SAP.TO,Saputo Inc.,,TSX,TSX Composite
+SBC.TO,Brompton Split Banc Corp.,,TSX,TMX Company Directory
+SBI.TO,Serabi Gold plc,,TSX,TMX Company Directory
+SCR.TO,Strathcona Resources Ltd.,,TSX,TMX Company Directory
+SDE.TO,Spartan Delta Corp.,,TSX,TMX Company Directory
+SEA.TO,Seabridge Gold Inc.,,TSX,TSX Composite
+SES.TO,Secure Waste Infrastructure Corp.,,TSX,TSX Composite
+SFC.TO,Sagicor Financial Company Ltd.,,TSX,TMX Company Directory
+SGD.TO,Snowline Gold Corp.,,TSX,TMX Company Directory
+SGY.TO,Surge Energy Inc.,,TSX,TMX Company Directory
+SHLE.TO,Source Energy Services Ltd.,,TSX,TMX Company Directory
+SHOP.TO,Shopify Inc. Class A Subordinate Voting Shares,,TSX,TSX Composite
+SIA.TO,Sienna Senior Living Inc.,,TSX,TSX Composite
+SII.TO,Sprott Inc.,,TSX,TMX Company Directory
+SIS.TO,Savaria Corporation,,TSX,TMX Company Directory
+SJ.TO,Stella-Jones Inc.,,TSX,TSX Composite
+SKE.TO,Skeena Resources Limited,,TSX,TMX Company Directory
+SLCA.TO,Sun Life Core Advantage Credit Private Pool,,TSX,TMX Company Directory
+SLF.TO,Sun Life Financial Inc.,,TSX,TSX Composite
+SLS.TO,Solaris Resources Inc.,,TSX,TMX Company Directory
+SOBO.TO,South Bow Corporation,,TSX,TMX Company Directory
+SOIL.TO,Saturn Oil & Gas Inc.,,TSX,TMX Company Directory
+SPB.TO,Superior Plus Corp.,,TSX,TMX Company Directory
+SSRM.TO,SSR Mining Inc.,,TSX,TMX Company Directory
+STC.TO,Sangoma Technologies Corporation,,TSX,TMX Company Directory
+STCK.TO,Stack Capital Group Inc.,,TSX,TMX Company Directory
+STN.TO,Stantec Inc.,,TSX,TSX Composite
+SU.TO,Suncor Energy Inc.,,TSX,TSX Composite
+SVM.TO,Silvercorp Metals Inc.,,TSX,TSX Composite
+SWP.TO,Swiss Water Decaffeinated Coffee Inc.,,TSX,TMX Company Directory
+SXGC.TO,Southern Cross Gold Consolidated Ltd.,,TSX,TMX Company Directory
+T.TO,TELUS Corporation,,TSX,TMX Company Directory
+TA.TO,TransAlta Corporation,,TSX,TMX Company Directory
+TC.TO,Tucows Inc.,,TSX,TMX Company Directory
+TCOM.TO,TD Alternative Commodities Pool,,TSX,TMX Company Directory
+TCS.TO,TECSYS Inc.,,TSX,TMX Company Directory
+TCW.TO,Trican Well Service Ltd.,,TSX,TMX Company Directory
+TD.TO,Toronto-Dominion Bank (The),,TSX,TSX Composite
+TERP.TO,TRU.X Exogenous Risk Pool,,TSX,TMX Company Directory
+TF.TO,Timbercreek Financial Corp.,,TSX,TMX Company Directory
+TFII.TO,TFI International Inc.,,TSX,TSX Composite
+TFPM.TO,Triple Flag Precious Metals Corp.,,TSX,TMX Company Directory
+TIH.TO,Toromont Industries Ltd.,,TSX,TSX Composite
+TINY.TO,Tiny Ltd.,,TSX,TMX Company Directory
+TKO.TO,Trekor Metals Limited,,TSX,TMX Company Directory
+TLO.TO,Talon Metals Corp.,,TSX,TMX Company Directory
+TLRY.TO,"Tilray Brands, Inc.",,TSX,TMX Company Directory
+TNZ.TO,Tenaz Energy Corp.,,TSX,TMX Company Directory
+TOT.TO,Total Energy Services Inc.,,TSX,TMX Company Directory
+TOU.TO,Tourmaline Oil Corp.,,TSX,TMX Company Directory
+TOY.TO,Spin Master Corp.,,TSX,TMX Company Directory
+TPZ.TO,Topaz Energy Corp.,,TSX,TMX Company Directory
+TRI.TO,Thomson Reuters Corporation,,TSX,TSX Composite
+TRP.TO,TC Energy Corporation,,TSX,TSX Composite
+TSAT.TO,Telesat Corporation,,TSX,TMX Company Directory
+TSU.TO,Trisura Group Ltd.,,TSX,TSX Composite
+TVE.TO,Tamarack Valley Energy Ltd.,,TSX,TMX Company Directory
+TVK.TO,TerraVest Industries Inc.,,TSX,TSX Composite
+TWC.TO,TWC Enterprises Limited,,TSX,TMX Company Directory
+TWM.TO,Tidewater Midstream and Infrastructure Ltd.,,TSX,TMX Company Directory
+UNC.TO,United Corporations Limited,,TSX,TMX Company Directory
+URB.TO,Urbana Corporation,,TSX,TMX Company Directory
+USA.TO,Americas Gold and Silver Corporation,,TSX,TMX Company Directory
+VBNK.TO,VersaBank,,TSX,TMX Company Directory
+VCM.TO,Vecima Networks Inc.,,TSX,TMX Company Directory
+VET.TO,Vermilion Energy Inc.,,TSX,TMX Company Directory
+VHI.TO,Vitalhub Corp.,,TSX,TMX Company Directory
+VLE.TO,Valeura Energy Inc.,,TSX,TMX Company Directory
+VLN.TO,Velan Inc.,,TSX,TMX Company Directory
+VMET.TO,Versamet Royalties Corporation,,TSX,TMX Company Directory
+VNP.TO,5N Plus Inc.,,TSX,TSX Composite
+VOXR.TO,Vox Royalty Corp.,,TSX,TMX Company Directory
+VZLA.TO,Vizsla Silver Corp.,,TSX,TSX Composite
+WCN.TO,Waste Connections Inc.,,TSX,TSX Composite
+WCP.TO,Whitecap Resources Inc.,,TSX,TSX Composite
+WDO.TO,Wesdome Gold Mines Ltd.,,TSX,TSX Composite
+WEF.TO,Western Forest Products Inc.,,TSX,TMX Company Directory
+WFG.TO,West Fraser Timber Co. Ltd.,,TSX,TSX Composite
+WJX.TO,Wajax Corporation,,TSX,TMX Company Directory
+WN.TO,George Weston Limited,,TSX,TMX Company Directory
+WPK.TO,Winpak Ltd.,,TSX,TMX Company Directory
+WPM.TO,Wheaton Precious Metals Corp.,,TSX,TSX Composite
+WSP.TO,WSP Global Inc.,,TSX,TSX Composite
+WTE.TO,Westshore Terminals Investment Corporation,,TSX,TMX Company Directory
+X.TO,TMX Group Limited,,TSX,TSX Composite
+XAU.TO,GoldMoney Inc.,,TSX,TMX Company Directory
+XNDU.TO,Xanadu Quantum Technologies Limited,,TSX,TMX Company Directory
+XTC.TO,Exco Technologies Limited,,TSX,TMX Company Directory
+XTD.TO,TDb Split Corp.,,TSX,TMX Company Directory
+Y.TO,Yellow Pages Limited,,TSX,TMX Company Directory
+AEC.V,Anfield Energy Inc.,,TSXV,TMX Company Directory
+ALV.V,Alvopetro Energy Ltd.,,TSXV,TMX Company Directory
+ARTG.V,Artemis Gold Inc.,,TSXV,TMX Company Directory
+BCF.V,Builders Capital Mortgage Corp.,,TSXV,TMX Company Directory
+CMU.V,Comet Industries Ltd.,,TSXV,TMX Company Directory
+DE.V,Decisive Dividend Corporation,,TSXV,TMX Company Directory
+ENA.V,Enablence Technologies Inc.,,TSXV,TMX Company Directory
+GGA.V,Goldgroup Mining Inc.,,TSXV,TMX Company Directory
+GRZ.V,Gold Reserve Ltd.,,TSXV,TMX Company Directory
+GSD.V,Devonian Health Group Inc.,,TSXV,TMX Company Directory
+HHH.V,Helius Minerals Limited,,TSXV,TMX Company Directory
+LA.V,Los Andes Copper Ltd.,,TSXV,TMX Company Directory
+LMN.V,Lumine Group Inc.,,TSXV,TMX Company Directory
+MKO.V,Mako Mining Corp.,,TSXV,TMX Company Directory
+MOON.V,Blue Moon Metals Inc.,,TSXV,TMX Company Directory
+MTA.V,Metalla Royalty & Streaming Ltd.,,TSXV,TMX Company Directory
+PKT.V,Parkit Enterprise Inc.,,TSXV,TMX Company Directory
+PNG.V,Kraken Robotics Inc.,,TSXV,TMX Company Directory
+PVF-A.V,Partners Value Investments L.P.,,TSXV,TMX Company Directory
+RARE.V,Tactical Resources Corp.,,TSXV,TMX Company Directory
+RX.V,BioSyent Inc.,,TSXV,TMX Company Directory
+SCAN.V,"Liberty Defense Holdings, Ltd.",,TSXV,TMX Company Directory
+SCZ.V,Santacruz Silver Mining Ltd.,,TSXV,TMX Company Directory
+SGML.V,Sigma Lithium Corporation,,TSXV,TMX Company Directory
+SICO.V,Silverco Mining Ltd.,,TSXV,TMX Company Directory
+SUGR.V,Sucro Limited,,TSXV,TMX Company Directory
+TALA.V,Talamore Mining Corp.,,TSXV,TMX Company Directory
+TNGD.V,Tiernan Gold Corp.,,TSXV,TMX Company Directory
+TOI.V,Topicus.com Inc.,,TSXV,TMX Company Directory
+UCU.V,Ucore Rare Metals Inc.,,TSXV,TMX Company Directory
+VCI.V,Vitreous Glass Inc.,,TSXV,TMX Company Directory
+WED.V,The Westaim Corporation,,TSXV,TMX Company Directory
+ZDC.V,Zedcor Inc.,,TSXV,TMX Company Directory

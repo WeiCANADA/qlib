@@ -39,6 +39,7 @@ CALENDAR_BENCH_URL_MAP = {
     "US_ALL": "^GSPC",
     "IN_ALL": "^NSEI",
     "BR_ALL": "^BVSP",
+    "CA_ALL": "^GSPTSE",
 }
 
 _BENCH_CALENDAR_LIST = None
@@ -47,6 +48,7 @@ _HS_SYMBOLS = None
 _US_SYMBOLS = None
 _IN_SYMBOLS = None
 _BR_SYMBOLS = None
+_CA_SYMBOLS = None
 _EN_FUND_SYMBOLS = None
 _CALENDAR_MAP = {}
 
@@ -69,6 +71,31 @@ def get_calendar_list(bench_code="CSI300") -> List[pd.Timestamp]:
 
     logger.info(f"get calendar list: {bench_code}......")
 
+    def _fallback_calendar() -> List[pd.Timestamp]:
+        local_map = {
+            "CA_ALL": Path("~/.qlib/qlib_data/ca_data/calendars/day.txt").expanduser(),
+            "US_ALL": Path("~/.qlib/qlib_data/us_data/calendars/day.txt").expanduser(),
+        }
+        local_path = local_map.get(bench_code.upper())
+        if local_path and local_path.exists():
+            days = [x.strip() for x in local_path.read_text(encoding="utf-8").splitlines() if x.strip()]
+            if days:
+                return sorted(map(pd.Timestamp, days))
+
+        return pd.bdate_range("2005-01-01", pd.Timestamp.today().normalize()).map(pd.Timestamp).tolist()
+
+    def _benchmark_calendar() -> List[pd.Timestamp]:
+        try:
+            df = Ticker(CALENDAR_BENCH_URL_MAP[bench_code]).history(interval="1d", period="max")
+            if df is None or len(df) == 0:
+                return _fallback_calendar()
+            if isinstance(df.index, pd.MultiIndex) and "date" in df.index.names:
+                return df.index.get_level_values(level="date").map(pd.Timestamp).unique().tolist()
+            return pd.to_datetime(df.index, errors="coerce").dropna().map(pd.Timestamp).unique().tolist()
+        except Exception as exc:  # pylint: disable=broad-except
+            logger.warning(f"benchmark calendar fetch failed for {bench_code}: {exc}; use fallback calendar")
+            return _fallback_calendar()
+
     def _get_calendar(end_date):
         bs.login()
         rs = bs.query_trade_dates(start_date="2005-01-01", end_date=end_date)
@@ -77,16 +104,15 @@ def get_calendar_list(bench_code="CSI300") -> List[pd.Timestamp]:
             data_list.append(rs.get_row_data())
         bs.logout()
         df = pd.DataFrame(data_list, columns=rs.fields)
+        if "is_trading_day" not in df.columns:
+            raise RuntimeError(f"baostock calendar response missing is_trading_day: columns={list(df.columns)}")
         trade_days = df[df["is_trading_day"] == "1"]["calendar_date"]
         return sorted(map(pd.Timestamp, trade_days.to_list()))
 
     calendar = _CALENDAR_MAP.get(bench_code, None)
     if calendar is None:
-        if bench_code.startswith("US_") or bench_code.startswith("IN_") or bench_code.startswith("BR_"):
-            print(Ticker(CALENDAR_BENCH_URL_MAP[bench_code]))
-            print(Ticker(CALENDAR_BENCH_URL_MAP[bench_code]).history(interval="1d", period="max"))
-            df = Ticker(CALENDAR_BENCH_URL_MAP[bench_code]).history(interval="1d", period="max")
-            calendar = df.index.get_level_values(level="date").map(pd.Timestamp).unique().tolist()
+        if bench_code.startswith("US_") or bench_code.startswith("IN_") or bench_code.startswith("BR_") or bench_code.startswith("CA_"):
+            calendar = _benchmark_calendar()
         else:
             if bench_code.upper() == "ALL":
                 import akshare as ak  # pylint: disable=C0415
@@ -293,9 +319,17 @@ def get_us_stock_symbols(qlib_data_path: [str, Path] = None) -> list:
     -------
         stock symbols
     """
-    import akshare as ak  # pylint: disable=C0415
-
     global _US_SYMBOLS  # pylint: disable=W0603
+
+    symbols_file = Path(__file__).parent.joinpath("yahoo", "us_symbols.csv")
+    if _US_SYMBOLS is None and symbols_file.exists():
+        df = pd.read_csv(symbols_file)
+        _symbols = df["symbol"].dropna().astype(str).tolist()
+        _US_SYMBOLS = sorted(set(_symbols))
+        logger.info(f"get {len(_US_SYMBOLS)} US stock symbols from {symbols_file}")
+        return _US_SYMBOLS
+
+    import akshare as ak  # pylint: disable=C0415
 
     @deco_retry
     def _get_eastmoney():
@@ -457,6 +491,37 @@ def get_br_stock_symbols(qlib_data_path: [str, Path] = None) -> list:
         _BR_SYMBOLS = sorted(set(map(_format, _all_symbols)))
 
     return _BR_SYMBOLS
+
+
+def get_ca_stock_symbols(qlib_data_path: [str, Path] = None) -> list:
+    """get Canada(TSX) stock symbols from ca_symbols.csv
+
+    Returns
+    -------
+        Canada stock symbols
+    """
+    global _CA_SYMBOLS  # pylint: disable=W0603
+
+    if _CA_SYMBOLS is None:
+        # Load from ca_symbols.csv file in the same directory
+        symbols_file = Path(__file__).parent.joinpath("yahoo", "ca_symbols.csv")
+        if symbols_file.exists():
+            df = pd.read_csv(symbols_file)
+            _symbols = df["symbol"].to_list()
+            logger.info(f"get {len(_symbols)} Canada stock symbols from {symbols_file}")
+        else:
+            logger.warning(f"ca_symbols.csv not found at {symbols_file}, using default symbols")
+            _symbols = [
+                "AC.TO", "CNQ.TO", "RY.TO", "TD.TO", "BNS.TO",
+                "SHOP.TO", "CP.TO", "CNR.TO", "ENB.TO", "BAM.TO"
+            ]
+
+        # Always add Canada index
+        _symbols = _symbols + ["^GSPTSE"]
+
+        _CA_SYMBOLS = sorted(set(_symbols))
+
+    return _CA_SYMBOLS
 
 
 def get_en_fund_symbols(qlib_data_path: [str, Path] = None) -> list:

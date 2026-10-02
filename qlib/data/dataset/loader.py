@@ -258,7 +258,8 @@ class StaticDataLoader(DataLoader, Serializable):
         if instruments is None:
             df = self._data
         else:
-            df = self._data.loc(axis=0)[:, instruments]
+            inst_list = self._resolve_instruments(instruments, start_time=start_time, end_time=end_time)
+            df = self._filter_by_instruments(self._data, inst_list)
 
         # 2) Filter by Datetime
         if start_time is None and end_time is None:
@@ -267,6 +268,37 @@ class StaticDataLoader(DataLoader, Serializable):
         start_time = time_to_slc_point(start_time)
         end_time = time_to_slc_point(end_time)
         return df.loc[start_time:end_time]
+
+    @staticmethod
+    def _filter_by_instruments(df: pd.DataFrame, inst_list: list[str]) -> pd.DataFrame:
+        if not isinstance(df.index, pd.MultiIndex):
+            return df
+
+        idx_names = [str(x) if x is not None else "" for x in df.index.names]
+        inst_level = idx_names.index("instrument") if "instrument" in idx_names else (df.index.nlevels - 1)
+        inst_values = df.index.get_level_values(inst_level).astype(str)
+        mask = inst_values.isin(set(inst_list))
+        return df.loc[mask]
+
+    @staticmethod
+    def _resolve_instruments(instruments, start_time=None, end_time=None) -> list[str]:
+        # Accept qlib market-style instruments (e.g. "all" or {"market": "all", ...})
+        # and normalize to an explicit list for robust filtering.
+        if isinstance(instruments, (str, dict)):
+            if isinstance(instruments, str):
+                instruments = D.instruments(instruments)
+            inst_list = D.list_instruments(
+                instruments,
+                start_time=start_time,
+                end_time=end_time,
+                as_list=True,
+            )
+            return [str(x) for x in inst_list]
+
+        if isinstance(instruments, (list, tuple, set, pd.Index)):
+            return [str(x) for x in instruments]
+
+        raise KeyError(f"Unsupported instruments type in StaticDataLoader: {type(instruments).__name__}")
 
     def _maybe_load_raw_data(self):
         if self._data is not None:
