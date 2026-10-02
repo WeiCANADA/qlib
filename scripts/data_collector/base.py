@@ -40,6 +40,7 @@ class BaseCollector(abc.ABC):
         delay=0,
         check_data_length: int = None,
         limit_nums: int = None,
+        instruments=None,
     ):
         """
 
@@ -63,6 +64,8 @@ class BaseCollector(abc.ABC):
             check data length, if not None and greater than 0, each symbol will be considered complete if its data length is greater than or equal to this value, otherwise it will be fetched again, the maximum number of fetches being (max_collector_count). By default None.
         limit_nums: int
             using for debug, by default None
+        instruments: str or Iterable
+            specific symbols to collect, e.g. "AC.TO,MSFT"; default None means all symbols
         """
         self.save_dir = Path(save_dir).expanduser().resolve()
         self.save_dir.mkdir(parents=True, exist_ok=True)
@@ -78,12 +81,38 @@ class BaseCollector(abc.ABC):
         self.end_datetime = self.normalize_end_datetime(end)
 
         self.instrument_list = sorted(set(self.get_instrument_list()))
+        self.instrument_list = self._apply_instrument_filter(self.instrument_list, instruments)
 
         if limit_nums is not None:
             try:
                 self.instrument_list = self.instrument_list[: int(limit_nums)]
             except Exception as e:
                 logger.warning(f"Cannot use limit_nums={limit_nums}, the parameter will be ignored")
+
+    @staticmethod
+    def _parse_instruments(instruments):
+        if instruments is None:
+            return []
+        if isinstance(instruments, str):
+            return [x.strip() for x in instruments.split(",") if x and x.strip()]
+        if isinstance(instruments, Iterable):
+            return [str(x).strip() for x in instruments if str(x).strip()]
+        return [str(instruments).strip()]
+
+    def _apply_instrument_filter(self, instrument_list, instruments):
+        selected = self._parse_instruments(instruments)
+        if not selected:
+            return instrument_list
+
+        selected_upper = {s.upper() for s in selected}
+        filtered = [inst for inst in instrument_list if str(inst).upper() in selected_upper]
+        filtered_upper = {str(inst).upper() for inst in filtered}
+        missing = sorted(selected_upper - filtered_upper)
+
+        logger.info(f"instrument filter enabled: requested={len(selected_upper)}, matched={len(filtered)}")
+        if missing:
+            logger.warning(f"symbols not found for current region/source: {missing}")
+        return filtered
 
     def normalize_start_datetime(self, start_datetime: [str, pd.Timestamp] = None):
         return (
@@ -170,6 +199,15 @@ class BaseCollector(abc.ABC):
         if instrument_path.exists():
             _old_df = pd.read_csv(instrument_path)
             df = pd.concat([_old_df, df], sort=False)
+
+        # Keep append semantics while preventing duplicate records for existing dates.
+        if "date" in df.columns:
+            # Normalize date dtype to avoid mixed-type sort errors (e.g. datetime.date vs str).
+            df["date"] = df["date"].astype(str)
+            df = df.drop_duplicates(subset=["date"], keep="last").sort_values(["date"])
+        else:
+            df = df.drop_duplicates().sort_index()
+
         df.to_csv(instrument_path, index=False)
 
     def cache_small_data(self, symbol, df):
